@@ -202,6 +202,9 @@ Frontend UI
 Neo4j
 
 n8n workflows
+---
+
+
 
 
 ##🏆 Why This Project Is Hard (And Valuable)
@@ -218,6 +221,8 @@ Cross-disciplinary insight generation
 
 Most projects build chatbots.
 This builds a scientific reasoning system.
+---
+
 
 ##👥 Team & Collaboration
 ---
@@ -229,10 +234,13 @@ Pull-request-based workflow
 
 Designed for collaborative research teams
 
+---
+
 ##📜 License
 ---
 MIT License (to be added)
 
+---
 ##🌍 Vision
 ---
 The future of science is not faster publishing —
