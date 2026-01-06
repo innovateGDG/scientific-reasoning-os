@@ -208,7 +208,7 @@ n8n workflows
 
 
 ##🏆 Why This Project Is Hard (And Valuable)
----
+
 Long-context scientific reasoning
 
 Causal inference over experiments
@@ -227,7 +227,7 @@ This builds a scientific reasoning system.
 
 
 ##👥 Team & Collaboration
----
+
 Monorepo architecture
 
 Protected main branch
@@ -239,14 +239,13 @@ Designed for collaborative research teams
 ---
 
 ##📜 License
----
 MIT License (to be added)
 
 
 ---
 
 ##🌍 Vision
----
+
 The future of science is not faster publishing —
 it is better reasoning.
 
