@@ -207,7 +207,7 @@ n8n workflows
 ---
 
 
-##🏆 Why This Project Is Hard (And Valuable)
+## 🏆 Why This Project Is Hard (And Valuable)
 
 Long-context scientific reasoning
 
@@ -226,7 +226,7 @@ This builds a scientific reasoning system.
 
 
 
-##👥 Team & Collaboration
+## 👥 Team & Collaboration
 
 Monorepo architecture
 
@@ -238,13 +238,13 @@ Designed for collaborative research teams
 
 ---
 
-##📜 License
+## 📜 License
 MIT License (to be added)
 
 
 ---
 
-##🌍 Vision
+## 🌍 Vision
 
 The future of science is not faster publishing —
 it is better reasoning.
