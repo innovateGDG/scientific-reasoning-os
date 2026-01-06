@@ -203,9 +203,9 @@ Neo4j
 
 n8n workflows
 
----
-##🏆 Why This Project Is Hard (And Valuable)
 
+##🏆 Why This Project Is Hard (And Valuable)
+---
 Long-context scientific reasoning
 
 Causal inference over experiments
@@ -218,9 +218,9 @@ Cross-disciplinary insight generation
 
 Most projects build chatbots.
 This builds a scientific reasoning system.
-----
-##👥 Team & Collaboration
 
+##👥 Team & Collaboration
+---
 Monorepo architecture
 
 Protected main branch
@@ -228,13 +228,13 @@ Protected main branch
 Pull-request-based workflow
 
 Designed for collaborative research teams
----
+
 ##📜 License
-
-MIT License (to be added)
 ---
-##🌍 Vision
+MIT License (to be added)
 
+##🌍 Vision
+---
 The future of science is not faster publishing —
 it is better reasoning.
 
