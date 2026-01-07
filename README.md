@@ -190,7 +190,6 @@ This alone demonstrates **real scientific reasoning**, not just AI summarization
 
 ## 🧪 How to Run (Local)
 
-```bash
 docker-compose up
 
 
