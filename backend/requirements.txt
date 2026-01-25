@@ -1,0 +1,19 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+
+# PDF parsing
+PyMuPDF
+
+# Embeddings
+sentence-transformers
+
+# Vector search
+faiss-cpu
+
+# Environment variables
+python-dotenv
+
+# Gemini API
+google-generativeai
