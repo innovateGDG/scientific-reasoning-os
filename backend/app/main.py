@@ -1,6 +1,16 @@
 from fastapi import FastAPI
 
-from app.api import ingest, hypothesis, assumptions, failure, pipeline
+# --- Core Routers (direct imports, NO circular imports) ---
+from app.api.ingest import router as ingest_router
+from app.api.hypothesis import router as hypothesis_router
+from app.api.assumptions import router as assumptions_router
+from app.api.failure import router as failure_router
+from app.api.pipeline import router as pipeline_router
+
+from app.api.auth import router as auth_router
+from app.api.profile import router as profile_router
+from app.api.projects import router as projects_router
+
 
 app = FastAPI(
     title="Scientific Reasoning OS",
@@ -11,37 +21,59 @@ app = FastAPI(
 # =========================
 # Register API Routers
 # =========================
+
+# 🔐 Auth
 app.include_router(
-    ingest.router,
+    auth_router,
+    tags=["Auth"]
+)
+
+# 👤 User Profile
+app.include_router(
+    profile_router,
+    tags=["User Profile"]
+)
+
+# 📁 Projects
+app.include_router(
+    projects_router,
+    tags=["Projects"]
+)
+
+# 📥 Ingestion
+app.include_router(
+    ingest_router,
     prefix="/ingest",
     tags=["Ingestion"]
 )
 
+# 🧠 Hypothesis
 app.include_router(
-    hypothesis.router,
+    hypothesis_router,
     prefix="/hypothesis",
     tags=["Hypothesis"]
 )
 
+# 🧩 Assumptions
 app.include_router(
-    assumptions.router,
+    assumptions_router,
     prefix="/assumptions",
     tags=["Assumptions"]
 )
 
+# ⚠️ Failure Intelligence
 app.include_router(
-    failure.router,
+    failure_router,
     prefix="/failure",
     tags=["Failure Intelligence"]
 )
 
-# 🔥 NEW: Auto Pipeline Router
+# 🔥 Auto Pipeline
 app.include_router(
-    pipeline.router,
+    pipeline_router,
     prefix="/pipeline",
     tags=["Auto Pipeline"]
 )
-
 
 # =========================
 # Health Check

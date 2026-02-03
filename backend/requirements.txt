@@ -1,19 +1,48 @@
+# -------------------------
+# FastAPI & Server
+# -------------------------
 fastapi
 uvicorn
 pydantic
+pydantic-settings
+
+# -------------------------
+# Request handling
+# -------------------------
 python-multipart
 
+# -------------------------
+# Database
+# -------------------------
+sqlalchemy
+
+# -------------------------
+# Authentication & Security
+# -------------------------
+python-jose[cryptography]
+passlib[bcrypt]
+
+# -------------------------
 # PDF parsing
+# -------------------------
 PyMuPDF
 
+# -------------------------
 # Embeddings
+# -------------------------
 sentence-transformers
 
+# -------------------------
 # Vector search
+# -------------------------
 faiss-cpu
 
+# -------------------------
 # Environment variables
+# -------------------------
 python-dotenv
 
+# -------------------------
 # Gemini API
+# -------------------------
 google-generativeai
