@@ -1,0 +1,13 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Env
+.env
+
+# Python
+venv/
+__pycache__/
+
+# OS
+.DS_Store

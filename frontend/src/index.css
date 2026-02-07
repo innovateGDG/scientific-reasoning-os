@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Scientific floating particles */
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(99, 102, 241, 0.4); /* indigo */
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: float 12s infinite ease-in-out;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 10%;
+  animation-duration: 14s;
+}
+.particle-2 {
+  top: 60%;
+  left: 20%;
+  animation-duration: 18s;
+}
+.particle-3 {
+  top: 30%;
+  left: 70%;
+  animation-duration: 16s;
+}
+.particle-4 {
+  top: 80%;
+  left: 80%;
+  animation-duration: 20s;
+}
+.particle-5 {
+  top: 40%;
+  left: 50%;
+  animation-duration: 22s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
