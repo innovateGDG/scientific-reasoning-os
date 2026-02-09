@@ -4,10 +4,11 @@ require("dotenv").config()
 
 const db = require("./config/db")
 const authRoutes = require("./routes/auth.routes")
-
+const profileRoutes = require("./routes/profile.routes")  // Add this
+const projectRoutes = require("./routes/project.routes")
 const app = express()
 
-// ✅ VERY IMPORTANT: CORS FIRST
+// ✅ CORS Configuration
 app.use(cors({
   origin: "http://localhost:5177",
   credentials: true,
@@ -15,7 +16,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
-// ✅ VERY IMPORTANT: HANDLE PREFLIGHT
+// ✅ Handle Preflight
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:5177")
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
@@ -33,8 +34,11 @@ app.use(express.json())
 app.get("/", (req, res) => {
   res.send("Backend is running")
 })
+app.use("/api/projects", projectRoutes)
 
+// Routes
 app.use("/api/auth", authRoutes)
+app.use("/api/profile", profileRoutes)  // Add this
 
 const PORT = process.env.PORT || 5001
 app.listen(PORT, () => {

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import ThemeToggle from "../components/ThemeToggle"
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("")
@@ -46,6 +47,11 @@ export default function ForgotPassword() {
 
   return (
     <div className="flex h-screen items-center justify-center">
+      {/* THEME TOGGLE */}
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="w-80 border p-6 rounded"

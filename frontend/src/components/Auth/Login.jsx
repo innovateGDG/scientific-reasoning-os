@@ -2,14 +2,31 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { loginUser } from "../../Services/api"
 import { GoogleLogin } from "@react-oauth/google"
+import ThemeToggle from "../ThemeToggle"
 
 export default function Login() {
+  // CSS for styling select placeholder to match input placeholders
+  const selectPlaceholderStyle = `
+    select option:disabled {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+    select option {
+      color: #1f2937;
+      font-weight: 400;
+    }
+  `
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState("")
 
   const navigate = useNavigate()
+
+  const redirectAfterLogin = () => {
+    navigate("/profile-setup", { replace: true })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -24,7 +41,7 @@ export default function Login() {
 
       if (res.token) {
         localStorage.setItem("token", res.token)
-        navigate("/dashboard", { replace: true })
+        redirectAfterLogin()
       } else {
         setMessage(res.message || "Login failed")
       }
@@ -43,8 +60,14 @@ export default function Login() {
           "url('https://image.slidesdocs.com/responsive-images/background/blue-science-light-technology-intelligent-powerpoint-background_ca134222dd__960_540.jpg')"
       }}
     >
+      <style>{selectPlaceholderStyle}</style>
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* THEME TOGGLE */}
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
 
       {/* MAIN CARD */}
       <div className="relative w-full max-w-5xl bg-white/90 backdrop-blur-xl
@@ -112,8 +135,9 @@ export default function Login() {
                       return
                     }
 
-                    localStorage.setItem("token", data.token)
-                    navigate("/dashboard", { replace: true })
+                      localStorage.setItem("token", data.token)
+
+                        redirectAfterLogin()
                   } catch {
                     setMessage("Google login error")
                   }

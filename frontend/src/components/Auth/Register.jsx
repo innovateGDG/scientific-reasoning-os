@@ -1,8 +1,21 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { registerUser } from "../../Services/api"
+import ThemeToggle from "../ThemeToggle"
 
 export default function Register() {
+  // CSS for styling select placeholder to match input placeholders
+  const selectPlaceholderStyle = `
+    select option:disabled {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+    select option {
+      color: #1f2937;
+      font-weight: 400;
+    }
+  `
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -13,6 +26,10 @@ export default function Register() {
 
   const navigate = useNavigate()
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+  const redirectAfterLogin = () => {
+    navigate("/profile-setup", { replace: true })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,7 +49,7 @@ export default function Register() {
       if (res.token) {
         localStorage.setItem("token", res.token)
         await delay(1000)
-        navigate("/dashboard", { replace: true })
+        redirectAfterLogin()
       } else {
         setError(res.message || "Registration failed")
       }
@@ -51,8 +68,14 @@ export default function Register() {
           "url('https://image.slidesdocs.com/responsive-images/background/blue-science-light-technology-intelligent-powerpoint-background_ca134222dd__960_540.jpg')"
       }}
     >
+      <style>{selectPlaceholderStyle}</style>
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* THEME TOGGLE */}
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
 
       {/* MAIN CARD */}
       <div className="relative w-full max-w-5xl bg-white/90 backdrop-blur-xl
